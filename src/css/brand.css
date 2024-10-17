@@ -1,0 +1,76 @@
+:root {
+    --dark: #001e2b;
+    --dark-translucent: rgba(00,30,43,0.8);
+    --light-highlight: #00ed64;
+    --light-highlight-translucent: rgba(00,237,64,0.5);
+    --dark-highlight: #00684a;
+    --dark-highlight-translucent: rgba(00,104,74,0.5);
+    --light-one: #e3fcf7;
+    --light-two: #f9ebff;
+    --white: #ffffff;
+    --dark-accent: #bbbbbb;
+    --light-accent: #eeeeee;
+    --error-background: rgba(139, 0, 0, 0.2);
+    --error-color: darkred; 
+    --soft-sand: #F4E1D2;
+    --ocean-blue: #009DAE;
+    --sunset-orange: #FF7F50;
+    --sky-blue: #87CEEB;
+    --driftwood-gray: #6B6E70;
+    --white: #FFFFFF;
+    --coral-pink: #FF6F61;
+    --sea-foam-green: #2E8B57;
+    --hot-pink: #D7263D;
+    --vibrant-orange: #FF8C00;
+    --deep-blue: #1E90FF;
+    --soft-white: #F5F5F5;
+}
+
+@font-face {
+    font-family: Euclid Circular A;
+    src: url(https://static.mongodb.com/com/fonts/EuclidCircularA-Regular-WebXL.woff2) format('woff2');
+    font-weight: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Euclid Circular A;
+    src: url(https://static.mongodb.com/com/fonts/EuclidCircularA-Medium-WebXL.woff2) format('woff2');
+    font-weight: 500;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Brand Value Serif;
+    src: url(https://static.mongodb.com/com/fonts/MongoDBValueSerif-Regular.woff2) format('woff2');
+    font-weight: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Brand Value Serif;
+    src: url(https://static.mongodb.com/com/fonts/MongoDBValueSerif-Medium.woff2) format('woff2');
+    font-weight: 500;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Brand Value Serif;
+    src: url(https://static.mongodb.com/com/fonts/MongoDBValueSerif-Bold.woff2) format('woff2');
+    font-weight: bold;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Source Code Pro;
+    src: url(https://static.mongodb.com/com/fonts/SourceCodePro-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: Source Code Pro;
+    src: url(https://static.mongodb.com/com/fonts/SourceCodePro-Medium.ttf) format('truetype');
+    font-weight: 500;
+    font-display: swap;
+  }

@@ -1,0 +1,65 @@
+@import url('brand.css');
+
+.flagimage {
+    width: 16px;
+    margin-right: 7px;
+}
+
+.combo-button {
+    background-color: var(--light-highlight-translucent);
+    float: right;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 0;
+    align-items: center;
+    /* padding: 5px 10px; */
+    display: inline-flex; /* Ensures the button content is inline and flexible */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Vertically align the image and text */
+}
+
+.combo-button span {
+    display: inline-flex; /* Make span use flexbox */
+    align-items: center; /* Vertically align image and text */
+}
+
+span.language-button-text {
+    font-size: smaller;
+}
+
+.awesome-button {
+    background: none;
+    margin: -5px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:
+        background 0.3s,
+        border-radius 0.7s,
+        box-shaddow 0.7s
+}
+
+.awesome-button:hover {
+    background: var(--light-highlight-translucent);
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px var(--dark-translucent)
+  }
+
+.awesome-button i {
+    margin-right: 5px;
+  }
+
+@media only screen and (max-width: 620px) {
+    span.language-button-text {
+        visibility: hidden;
+    }
+
+    .combo-button {
+        background: none; /* Remove the background */
+        padding: 3px; /* Add 3px padding around the content */
+        border: none; /* Remove border */
+        margin-right: -15px;
+    }
+}
