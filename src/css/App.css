@@ -13,6 +13,11 @@
   text-align: center;
 }
 
+body{
+  height: 100vh;
+  padding: 50px;
+}
+
 .App-header {
   background-color: var(--dark);
   min-height: 100vh;
@@ -26,32 +31,6 @@
 
 .App-link {
   color: var(--light-highlight);
-}
-
-.full-width-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-width: 100%;
-}
-
-.banner-image-text {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.banner-image-text h1 {
-  position: absolute;
-  top: 0.8vw;
-  /* top: 15px; */
-  left: 50%;
-  transform: translateX(-50%); 
-  color: var(--white); 
-  text-shadow: 4px 4px 8px black; 
-  /* font-size: 5rem; */
-  font-size: 8vw;
-  z-index: 1;
-  /* transition: all 0.3s ease;  */
 }
 
 .responsive-text {
@@ -78,107 +57,6 @@ h2 {
   flex: 1;
   min-width: 300px;
   box-sizing: border-box;
-}
-
-/* div.croppedImage {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  position: relative;
-  border: 1px solid var(--dark-accent);
-  padding: 8px; 
-  box-sizing: border-box;
-  background-color: var(--light-accent); 
-}
-
-img.croppedImage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-} */
-
-div.croppedImage {
-  width: 100%; /* Ensure the div fills its parent width */
-  height: 300px; /* Set a fixed height for the div */
-  overflow: hidden; /* Hide any overflow from the image */
-  position: relative;
-  border: 1px solid var(--dark-accent);
-  padding: 8px; 
-  box-sizing: border-box; /* Ensure padding doesn't affect the size */
-  background-color: var(--light-accent); 
-}
-
-img.croppedImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Make the image fill the width of the container */
-  height: 100%; /* Make the image fill the height of the container */
-  object-fit: cover; /* Ensures the image fills the frame, cropping if necessary */
-}
-
-img.croppedImage:hover {
-  opacity: 0.3;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  position: relative;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  max-width: 90%;
-  max-height: 90%;
-  overflow: hidden;
-}
-
-.modal-image {
-  max-width: 100%;
-  border-radius: 8px;
-  max-height: 80vh; /* Ensure image doesn't overflow the screen */
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 30px;
-  color: var(--light-accent);
-  cursor: pointer;
-}
-
-div.info-box {
-  width: 290px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-div.info-text {
-  margin-top: 10px;
-  transition: color 0.3s ease; 
-}
-
-div.info-text:hover {
-  color: var(--dark-highlight); 
-  cursor: pointer;
 }
 
 div.space-above {
@@ -214,7 +92,8 @@ button.btn-primary-branded {
   color: var(--dark);
   font-size: 24px;
   padding: 10px 20px;
-  transition: all 0.3s ease;
+  margin: 30px;
+  transition: all 0.2s ease;
 }
 
 button.btn-primary-branded:hover {
@@ -223,105 +102,18 @@ button.btn-primary-branded:hover {
   color: var(--dark);
   border-radius: 30px;
   font-size: 28x; 
-  font-weight: bold; 
+  /* font-weight: bold;  */
   box-shadow: 0px 4px 8px var(--dark-translucent);
 }
 
-div.week-column-booked {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  height: 100px;
-  opacity: 0.5;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-div.week-column-available {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  height: 100px;
-  padding-left: 5px;
-  padding-right: 5px;
+button.btn-role {
+  min-width: 200px;
 }
 
 input[type="checkbox"]:checked {
   accent-color: var(--light-highlight);
 }
 
-div.month-container {
-  background-color: var(--dark-highlight-translucent);
-  padding: 10px; 
-  border-radius: 5px;
-}
-
-div.month-container h4 {
-  background-color: var(--dark-highlight);
-  color: var(--white);
-  padding: 5px;
-  margin: 0; 
-  border-radius: 3px;
-}
-
-div.month-box {
-  display: flex;
-  gap: 5px;
-  margin: 0 auto; 
-  width: fit-content; 
-  justify-content: center;
-}
-
-.calendar-grid {
-  margin-left: 50px;
-  margin-right: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; 
-  gap: 20px; 
-}
-
-.calendar-grid > * {
-  flex: 1;
-  min-width: 350px;
-  max-width: 350px;
-  box-sizing: border-box;
-}
-
-div.calendar-month {
-  width: 200px;
-}
-
-h3.year {
-  background-color: var(--dark-translucent);
-  text-align: center;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  color: var(--white);
-  display: inline-block;
-}
-
-#footer {
-  background-color: var(--light-two);
-  padding: 20px;
-}
-
-.stacked-buttons {
-  display: flex;
-  flex-direction: column; /* Stack the buttons vertically */
-  align-items: flex-start; /* Left-align the buttons */
-  gap: 10px; /* Optional: Add space between buttons */
-}
-
-div.footer-column {
-  align-items: left;
-}
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   .responsive-text {
