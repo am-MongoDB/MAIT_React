@@ -18,10 +18,10 @@ jobs:
       run: ls /home/runner/work/mait_react/
 
     - name: Check directory2
-      run: ls /home/runner/work/mait_react
+      run: ls /home/runner/work/mait_react/mait_react
 
     - name: Check directory3
-      run: ls /home/runner/work/mait_react/package.json
+      run: ls /home/runner/work/mait_react/mait_react/package.json
 
     - name: Build and Deploy React app to GitHub Pages
       uses: omkartapale/react-deployment-gh-pages@v1.0.0
