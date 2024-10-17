@@ -133,6 +133,11 @@ input[type="checkbox"]:checked {
   accent-color: var(--light-highlight);
 }
 
+p.error {
+  font-size: 24px;
+  color: red;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   .responsive-text {
