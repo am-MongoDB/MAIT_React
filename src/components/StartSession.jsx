@@ -13,19 +13,21 @@ export default function StartSession({ template, setSession }) {
                     headers: {
                         'Content-Type': 'application/json',
                     },
+                    credentials: 'include' // Ensure cookies are sent/received
                 });
-
                 if (!response.ok) {
                     throw new Error(`Error: ${response.statusText}`);
                 }
-
                 const data = await response.json();
+                window.localStorage.setItem(`${data.sessionId}_host`, new Date());
                 setSession(data.sessionId);
             } catch (err) {
                 setError(err.message);
             }
         };
-        if (template) {startSession()};
+        if (template) {
+            startSession();
+        }
     }, [template, setSession]);
 
     return (
