@@ -104,6 +104,10 @@ button.btn-primary-branded {
   transition: all 0.2s ease;
 }
 
+button.btn-primary-branded:active {
+  background-color: var(--dark-highlight) !important;
+}
+
 button.btn-primary-branded:hover {
   background-color: var(--light-highlight);
   color: var(--dark);
@@ -112,14 +116,38 @@ button.btn-primary-branded:hover {
   box-shadow: 0px 4px 8px var(--dark-translucent);
 }
 
-button.btn-role {
-  min-width: 200px;
+
+button.btn-primary-branded.discarded-option {
+  background-color: var(--light-highlight);
+  color: var(--dark);
+  opacity: 0.3;
 }
 
-button.btn.btn-primary-branded:active {
-  background-color: var(--dark-highlight);
-  color: var(--white);
-  font-weight: bold;
+button.btn-primary-branded.selected-option {
+  background-color: var(--light-highlight);
+  border-color: var(--dark);
+  border-width: 50px;
+  color: var(--dark);
+}
+
+button.btn-primary-branded.selected-option:hover {
+  background-color: var(--light-highlight);
+  color: var(--dark);
+  border-radius: 6px;
+  font-size: 28x;
+  box-shadow: 0px 0px 0px var(--dark-translucent);
+}
+
+button.btn-primary-branded.discarded-option:hover {
+  background-color: var(--light-highlight);
+  color: var(--dark);
+  border-radius: 6px;
+  font-size: 28x;
+  box-shadow: 0px 0px 0px var(--dark-translucent);
+}
+
+button.btn-role {
+  min-width: 200px;
 }
 
 select.branded-dropdown {
@@ -136,6 +164,28 @@ input[type="checkbox"]:checked {
 p.error {
   font-size: 24px;
   color: red;
+}
+
+div.formatted-session-data {
+  text-align: left !important; /* Override centering */
+  color: inherit !important; /* Ensure text color is inherited from the theme or use a custom color */
+  font-family: monospace; /* Use a monospace font to match code style */
+  background-color: #f9f9f9; /* Optional: Add a light background to make the code block stand out */
+  padding: 10px; /* Optional: Add padding around the code block */
+  border-radius: 4px; /* Optional: Rounded corners for a nicer look */
+}
+
+div.info-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--dark-translucent);
+  color: white;
+  text-align: center;
+  padding: 5px 5px;
+  font-size: 24px;
+  z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
 @media only screen and (max-width: 620px) {
