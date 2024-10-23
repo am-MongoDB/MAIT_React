@@ -3,6 +3,7 @@ import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { useState, useContext } from 'react';
 import { UserContext } from '../App';
 import { config } from '../config';
+import MarkDown from './Markdown/Markdown';
 import InfoBar from './InfoBar';
 import AnswerButtonList from './AnswerButtonList';
 import AdvanceButton from './AdvanceButton'
@@ -57,7 +58,8 @@ export default function SessionStarted({ session }) {
             {sessionData && (
                 <div>
                     <h1>{sessionData.title}</h1>
-                    <h2>{sessionData.text}</h2>
+                    <MarkDown markdown={sessionData.text}/>
+                    {/* <h2>{sessionData.text}</h2> */}
                     <InfoBar message={participantURL}/>
                     <AnswerButtonList 
                         sessionId={session}

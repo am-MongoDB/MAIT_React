@@ -246,6 +246,32 @@ div.answer-button.incorrect {
   opacity: 0.3;
 }
 
+pre {
+  text-align: left;
+}
+
+p.my-h1 {
+  font-size: 28px;
+  /* font-weight: ; */
+}
+
+p.my-h2 {
+  font-size: 22px;
+}
+
+p.my-p {
+  font-size: 22px;
+}
+
+.my-img {
+  max-width: 100vw;
+  /* width: 100%; */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  max-height: 400px;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   .responsive-text {
