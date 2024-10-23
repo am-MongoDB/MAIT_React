@@ -1,6 +1,6 @@
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { config } from '../config';
 import InfoBar from './InfoBar';
 import AnswerButtonList from './AnswerButtonList';
@@ -11,24 +11,6 @@ export default function SessionStarted({ session }) {
     const [latestEvent, setLatestEvent] = useState(null);
     const [joining, setJoining] = useState(false);
     const participantURL = `${window.location.origin}${window.location.pathname}?session=${session}`;
-    const [responseCountsArray, setResponseCountsArray] = 
-        useState(null);
-
-    function convertObjectToArray(obj, count) {
-        let result = [];
-        for (let i = 1; i <= count; i++) {
-            result.push(obj[i] || 0);
-        }
-        return result;
-    }
-
-    useEffect(() => {
-        if (sessionData && sessionData.responseCounts && sessionData.options) {
-            const newCountsData = convertObjectToArray(
-                sessionData.responseCounts, sessionData.options.length);
-            setResponseCountsArray(newCountsData);
-        }
-    }, [sessionData]);
 
     async function joinSession() {
         setJoining(true);
@@ -78,7 +60,7 @@ export default function SessionStarted({ session }) {
                         currentSlide={sessionData.currentSlide}
                         cardType={sessionData.cardType}
                         options={sessionData.options}
-                        responseCounts={responseCountsArray}
+                        responseCounts={sessionData.responseCounts}
                     />
                     <div className="formatted-session-data">
                         <h4>Current state</h4>

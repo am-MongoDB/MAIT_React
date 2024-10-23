@@ -53,12 +53,12 @@ export default function AnswerButtonList({
         // Not just using key=index so that the component doesn't
         // get reused between sessions
         key={`${sessionId}-${index}`}
-        optionNumber={index + 1}  
+        optionNumber={index}  
         optionText={optionText}
         optionPicked={selectedOptions}
         responseCount={responseCounts && 
           responseCounts.length > index ?
-          responseCounts[index] : null}
+          responseCounts[index] : 0}
           setOptionPicked={optionSelected}
           />
         ))}
