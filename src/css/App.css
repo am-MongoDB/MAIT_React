@@ -68,7 +68,14 @@ h2 {
 }
 
 div.space-above {
-  margin-top: 53px;
+  position: fixed;  /* Position the div relative to the window */
+  bottom: 0;        /* Align it to the bottom */
+  width: 100%;      /* Make the div span the full width of the window */
+  margin: 0;        /* Remove any margin that may offset its position */
+  background-color: #fff;  /* You can set a background color if needed */
+  padding: 10px;    /* Optional: add some padding */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);  /* Optional: subtle shadow effect */
+  z-index: 1000;    /* Ensure it's above other content */
 }
 
 div.error-message {
@@ -179,6 +186,15 @@ select.branded-dropdown {
   font-size: 20px;
   padding: 10px;
   margin-top: 30px;
+}
+
+div.footer {
+  margin-left: 30px;
+  text-align: left;
+}
+
+input[type="checkbox"] {
+  margin: 10px;
 }
 
 input[type="checkbox"]:checked {

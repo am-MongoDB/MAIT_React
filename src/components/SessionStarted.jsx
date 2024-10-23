@@ -9,11 +9,10 @@ import AdvanceButton from './AdvanceButton'
 import FollowUp from './FollowUp';
 
 export default function SessionStarted({ session }) {
-    const { role } = useContext(UserContext);
+    const { role, debug } = useContext(UserContext);
     const [error, setError] = useState(null);
     const [sessionData, setSessionData] = useState(null);
     const [latestEvent, setLatestEvent] = useState(null);
-    const [winningOption, setWinningOption] = useState(null);
     const [joining, setJoining] = useState(false);
     const participantURL = `${window.location.origin}${window.location.pathname}?session=${session}`;
 
@@ -70,7 +69,7 @@ export default function SessionStarted({ session }) {
                     />
                     {sessionData.followUp && <FollowUp message={sessionData.followUp}/>}
                     {role === 'host' && <AdvanceButton sessionId={session}/>}
-                    <div className="formatted-session-data">
+                    {debug && <div className="formatted-session-data">
                         <h4>Current state</h4>
                         <SyntaxHighlighter language="json" style={docco}>
                             {JSON.stringify(sessionData, null, 2)} 
@@ -79,7 +78,7 @@ export default function SessionStarted({ session }) {
                         <SyntaxHighlighter language="json" style={docco}>
                             {JSON.stringify(latestEvent, null, 2)} 
                         </SyntaxHighlighter>
-                    </div>
+                    </div>}
                 </div>  
             )}
             {error && <p className="error">{error}</p>}
