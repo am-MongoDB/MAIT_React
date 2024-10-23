@@ -20,6 +20,7 @@ export default function Host() {
                         {/* TODO: Should use a list from the database */}
                         <option value="Example Vote">Example Vote</option>
                         <option value="Example Quiz">Example Quiz</option>
+                        <option value="Example Exam">Example Exam</option>
                         <option value="Example Survey">Example Survey</option>
                     </select>
                 </div>
