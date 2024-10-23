@@ -5,7 +5,6 @@ export default function StartSession({ template, setSession }) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        console.log(template);
         const startSession = async () => {
             try {
                 const response = await fetch(`${config.hostURL}/session/${template}`, {

@@ -75,6 +75,7 @@ export default function SessionStarted({ session }) {
                     <InfoBar message={participantURL}/>
                     <AnswerButtonList 
                         sessionId={session}
+                        currentSlide={sessionData.currentSlide}
                         cardType={sessionData.cardType}
                         options={sessionData.options}
                         responseCounts={responseCountsArray}
