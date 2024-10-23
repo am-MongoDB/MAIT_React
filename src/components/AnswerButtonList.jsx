@@ -8,7 +8,8 @@ export default function AnswerButtonList({
   currentSlide,
   cardType,
   options,
-  responseCounts 
+  responseCounts,
+  correctOption
 }) {
   const { role } = useContext(UserContext);
   const [error, setError] = useState(null);
@@ -50,18 +51,19 @@ export default function AnswerButtonList({
     <div className='responsive-grid'>
       {options.map((optionText, index) => (
         <AnswerButton
-        // Not just using key=index so that the component doesn't
-        // get reused between sessions
-        key={`${sessionId}-${index}`}
-        optionNumber={index}  
-        optionText={optionText}
-        optionPicked={selectedOptions}
-        responseCount={responseCounts && 
-          responseCounts.length > index ?
-          responseCounts[index] : 0}
+          // Not just using key=index so that the component doesn't
+          // get reused between sessions
+          key={`${sessionId}-${index}`}
+          optionNumber={index}  
+          optionText={optionText}
+          optionPicked={selectedOptions}
+          responseCount={responseCounts && 
+            responseCounts.length > index ?
+            responseCounts[index] : 0}
           setOptionPicked={optionSelected}
-          />
-        ))}
+          correctOption={correctOption}
+        />
+      ))}
       {error && <p className="error">{error}</p>}
     </div>
   );

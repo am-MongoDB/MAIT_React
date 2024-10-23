@@ -5,14 +5,15 @@ export default function AnswerButton({
   optionText,
   optionPicked,
   responseCount,
-  setOptionPicked
+  setOptionPicked,
+  correctOption
 }) { 
   function pickMe() {
       if (!optionPicked) { setOptionPicked(optionNumber); }
   }
   
   return (
-    <div className="answer-button">
+    <div className={`answer-button ${correctOption === null ? "" : optionNumber === correctOption ? "correct" : "incorrect"}`}>
       <button 
         type="submit" 
         className={`btn btn-primary btn-primary-branded btn-role ${optionPicked && optionPicked === optionNumber ? "selected-option" : ""} ${optionPicked && optionPicked !== optionNumber ? "discarded-option" : ""}`}

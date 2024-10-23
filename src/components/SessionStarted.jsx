@@ -1,14 +1,19 @@
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { UserContext } from '../App';
 import { config } from '../config';
 import InfoBar from './InfoBar';
 import AnswerButtonList from './AnswerButtonList';
+import AdvanceButton from './AdvanceButton'
+import FollowUp from './FollowUp';
 
 export default function SessionStarted({ session }) {
+    const { role } = useContext(UserContext);
     const [error, setError] = useState(null);
     const [sessionData, setSessionData] = useState(null);
     const [latestEvent, setLatestEvent] = useState(null);
+    const [winningOption, setWinningOption] = useState(null);
     const [joining, setJoining] = useState(false);
     const participantURL = `${window.location.origin}${window.location.pathname}?session=${session}`;
 
@@ -61,7 +66,10 @@ export default function SessionStarted({ session }) {
                         cardType={sessionData.cardType}
                         options={sessionData.options}
                         responseCounts={sessionData.responseCounts}
+                        correctOption={sessionData.correctOption}
                     />
+                    {sessionData.followUp && <FollowUp message={sessionData.followUp}/>}
+                    {role === 'host' && <AdvanceButton sessionId={session}/>}
                     <div className="formatted-session-data">
                         <h4>Current state</h4>
                         <SyntaxHighlighter language="json" style={docco}>

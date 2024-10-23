@@ -104,8 +104,15 @@ button.btn-primary-branded {
   transition: all 0.2s ease;
 }
 
-button.btn-primary-branded:active {
-  background-color: var(--dark-highlight) !important;
+button.btn-primary-branded-control {
+  background-color: var(--dark-translucent);
+  border: var(--dark-highlight);
+  color: var(--light-one);
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 30px;
+  opacity: 0.5;
+  transition: all 0.2s ease;
 }
 
 button.btn-primary-branded:hover {
@@ -116,6 +123,23 @@ button.btn-primary-branded:hover {
   box-shadow: 0px 4px 8px var(--dark-translucent);
 }
 
+button.btn-primary-branded-control:hover {
+  background-color: var(--dark-translucent);
+  color: var(--light-one);
+  opacity: 0.8;
+  border-radius: 30px;
+  font-size: 28x; 
+  box-shadow: 0px 4px 8px var(--dark-translucent);
+}
+
+button.btn-primary-branded:active {
+  background-color: var(--dark-highlight) !important;
+}
+
+button.btn-primary-branded-control:active {
+  opacity: 1.0;
+  background-color: var(--dark-translucent) !important;
+}
 
 button.btn-primary-branded.discarded-option {
   background-color: var(--light-highlight);
@@ -191,6 +215,19 @@ div.info-bar {
 div.digital-count {
   font-weight: bold;
   font-size: 32px;
+}
+
+div.follow-up {
+  background-color: var(--dark-highlight);
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 28px;
+  color: var(--light-one);
+  border-radius: 15px;
+}
+
+div.answer-button.incorrect {
+  opacity: 0.3;
 }
 
 @media only screen and (max-width: 620px) {
