@@ -1,3 +1,5 @@
+import DigitalCounter from "./counters/DigitalCounter";
+
 export default function AnswerButton({ 
     optionNumber, // The number of this option amongst the available options
     optionText,   // The text associated with this option
@@ -23,9 +25,7 @@ export default function AnswerButton({
             >
                 {optionText}
             </button>
-            <div className="response-count">
-                {responseCount}
-            </div>
+            <DigitalCounter count={responseCount}/>
         </div>
     );
 }

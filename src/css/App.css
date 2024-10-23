@@ -188,6 +188,11 @@ div.info-bar {
   z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
+div.digital-count {
+  font-weight: bold;
+  font-size: 32px;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   .responsive-text {

@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import AnswerButton from './AnswerButton';
 
 export default function AnswerButtonList({ 
