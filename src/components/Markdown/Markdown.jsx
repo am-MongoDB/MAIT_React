@@ -10,43 +10,45 @@ import MyImg from './MyImg';
 
 export default function CustomMarkdown({ markdown }) {
   return (
-    <div>
+    <div className="markdown-container">
       <Markdown
         remarkPlugins={[remarkGfm]}
         children={markdown}
         components={{
-          // h1: 'h2',
           h1(props) {
-            const {children} = props
-            return <MyH1 text={children}/>
+            const { children } = props;
+            return <MyH1 text={children} />;
           },
           h2(props) {
-            const {children} = props
-            return <MyH2 text={children}/>
+            const { children } = props;
+            return <MyH2 text={children} />;
           },
           p(props) {
-            const {children} = props
-            return <MyP text={children}/>
+            const { children } = props;
+            return <MyP text={children} />;
           },
           img(props) {
-            return <MyImg props={props}/>
+            return <MyImg props={props} />;
           },
           code(props) {
-            const {children, className, node, ...rest} = props
-            const match = /language-(\w+)/.exec(className || '')
+            const { children, className, node, ...rest } = props;
+            const match = /language-(\w+)/.exec(className || '');
             return match ? (
-              <SyntaxHighlighter
-                {...rest}
-                PreTag="div"
-                children={String(children).replace(/\n$/, '')}
-                language={match[1]}
-                style={solarizedlight}
-              />
+              <div className="code-block-wrapper">
+                <SyntaxHighlighter
+                  {...rest}
+                  PreTag="pre"
+                  children={String(children).replace(/\n$/, '')}
+                  language={match[1]}
+                  style={solarizedlight}
+                  className="centered-code"
+                />
+              </div>
             ) : (
               <code {...rest} className={className}>
-              {children}
+                {children}
               </code>
-            )
+            );
           }
         }}
       />

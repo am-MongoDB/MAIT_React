@@ -252,6 +252,7 @@ pre {
 
 p.my-h1 {
   font-size: 28px;
+  margin: 20px;
   /* font-weight: ; */
 }
 
@@ -269,7 +270,24 @@ p.my-p {
   height: auto;
   display: block;
   margin: 0 auto;
-  max-height: 400px;
+  max-height: 600px;
+}
+
+.markdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  font-size: 24px;
+}
+
+.code-block-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%; 
+}
+
+.markdown-container {
+
 }
 
 @media only screen and (max-width: 620px) {
@@ -278,8 +296,69 @@ p.my-p {
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  .markdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    font-size: 8px;
+  }
   /* div.space-above {
     margin-top: 70px;
   } */
 }
 
+@media only screen and (max-width: 1100px) {
+  /* For mobile phones: */
+  .responsive-text {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .markdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    font-size: 20px;
+    transition: all 0.5s ease;
+  }
+  /* div.space-above {
+    margin-top: 70px;
+  } */
+}
+
+@media only screen and (max-width: 900px) {
+  /* For mobile phones: */
+  .responsive-text {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .markdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    font-size: 19px;
+  }
+  /* div.space-above {
+    margin-top: 70px;
+  } */
+}
+
+@media only screen and (max-width: 800px) {
+  .markdown-container {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .markdown-container {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .markdown-container {
+    font-size: 12px;
+  }
+}
