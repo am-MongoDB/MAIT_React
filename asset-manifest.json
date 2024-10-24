@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mait_react/static/css/main.22b2fd7b.css",
+    "main.js": "/mait_react/static/js/main.b3ced44b.js",
+    "index.html": "/mait_react/index.html",
+    "main.22b2fd7b.css.map": "/mait_react/static/css/main.22b2fd7b.css.map",
+    "main.b3ced44b.js.map": "/mait_react/static/js/main.b3ced44b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22b2fd7b.css",
+    "static/js/main.b3ced44b.js"
+  ]
+}
