@@ -18,11 +18,11 @@ export default function AnswerButtonList({
     useState(cardType === "PickOne" ? null : []);
 
   useEffect(() => {
-    if (currentSlide !== existingSlide) {
+    if (currentSlide !== existingSlide || correctOption !== null) {
       setExistingSlide(currentSlide);
       setSelectedOptions(cardType === "PickOne" ? null : []);
     }
-  }, [currentSlide, existingSlide, cardType]);
+  }, [currentSlide, existingSlide, cardType, correctOption]);
   
   async function sendResponseSingeleOption(option) {
     try {

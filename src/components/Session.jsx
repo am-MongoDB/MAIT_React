@@ -67,7 +67,7 @@ export default function Session({ session }) {
                 <div id="session-content">
                     <h1>{sessionData.title}</h1>
                     <MarkDown markdown={sessionData.text}/>
-                    <InfoBar message={participantURL}/>
+                    {role === 'host' && <InfoBar message={participantURL}/>}
                     <AnswerButtonList 
                         sessionId={session}
                         currentSlide={sessionData.currentSlide}
@@ -77,7 +77,8 @@ export default function Session({ session }) {
                         correctOption={sessionData.correctOption}
                     />
                     {sessionData.followUp && <FollowUp message={sessionData.followUp}/>}
-                    {role === 'host' && <AdvanceButton sessionId={session}/>}
+                    {role === 'host' && !sessionData.completed && 
+                        <AdvanceButton sessionId={session}/>}
                     {debug && <div className="formatted-session-data">
                         <h4>Current state</h4>
                         <Json object={sessionData}/>
