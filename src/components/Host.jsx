@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import StartSession from './StartSession';
-import SessionStarted from './SessionStarted';
+import Session from './Session';
 
 export default function Host() {
     const [template, setTemplate] = useState('Example Vote');
@@ -37,7 +37,7 @@ export default function Host() {
                 template = {template.replace(/ /g, '_').toUpperCase()}
                 setSession= {setSession}
             />}
-            {session && session !== "pending" && <SessionStarted 
+            {session && session !== "pending" && <Session 
                 session={session}/>}
         </div>
     );

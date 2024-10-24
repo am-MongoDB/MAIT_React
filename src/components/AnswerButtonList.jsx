@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { config } from '../config';
 import { UserContext } from '../App';
 import AnswerButton from './AnswerButton';
@@ -13,8 +13,16 @@ export default function AnswerButtonList({
 }) {
   const { role } = useContext(UserContext);
   const [error, setError] = useState(null);
+  const [existingSlide, setExistingSlide] = useState(null);
   const [selectedOptions, setSelectedOptions] = 
     useState(cardType === "PickOne" ? null : []);
+
+  useEffect(() => {
+    if (currentSlide !== existingSlide) {
+      setExistingSlide(currentSlide);
+      setSelectedOptions(cardType === "PickOne" ? null : []);
+    }
+  }, [currentSlide, existingSlide, cardType]);
   
   async function sendResponseSingeleOption(option) {
     try {
@@ -48,7 +56,7 @@ export default function AnswerButtonList({
   }
   
   return (
-    <div className='responsive-grid'>
+    <div className='responsive-grid avoiding-footnote'>
       {options.map((optionText, index) => (
         <AnswerButton
           // Not just using key=index so that the component doesn't

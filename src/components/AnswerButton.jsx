@@ -13,10 +13,12 @@ export default function AnswerButton({
   }
   
   return (
-    <div className={`answer-button ${correctOption === null ? "" : optionNumber === correctOption ? "correct" : "incorrect"}`}>
+    <div className={`answer-button ${correctOption === null 
+        ? "" 
+        : optionNumber === correctOption ? "correct" : "incorrect"}`}>
       <button 
         type="submit" 
-        className={`btn btn-primary btn-primary-branded btn-role ${optionPicked && optionPicked === optionNumber ? "selected-option" : ""} ${optionPicked && optionPicked !== optionNumber ? "discarded-option" : ""}`}
+        className={`btn btn-primary btn-primary-branded btn-role ${optionPicked !== null && optionPicked === optionNumber ? "selected-option" : ""} ${optionPicked !== null && optionPicked !== optionNumber ? "discarded-option" : ""}`}
         onClick={pickMe}
         >
         {optionText}

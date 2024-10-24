@@ -1,6 +1,4 @@
-import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { UserContext } from '../App';
 import { config } from '../config';
 import MarkDown from './Markdown/Markdown';
@@ -8,14 +6,24 @@ import InfoBar from './InfoBar';
 import AnswerButtonList from './AnswerButtonList';
 import AdvanceButton from './AdvanceButton'
 import FollowUp from './FollowUp';
+import Json from './Json';
 
-export default function SessionStarted({ session }) {
+export default function Session({ session }) {
     const { role, debug } = useContext(UserContext);
     const [error, setError] = useState(null);
     const [sessionData, setSessionData] = useState(null);
     const [latestEvent, setLatestEvent] = useState(null);
     const [joining, setJoining] = useState(false);
     const participantURL = `${window.location.origin}${window.location.pathname}?session=${session}`;
+
+    useEffect(() => {
+        console.log('Running');
+        if (role === 'participant') {
+            console.log('Joining session');
+            joinSession();
+        }
+        // eslint-disable-next-line
+      }, [role]);
 
     async function joinSession() {
         setJoining(true);
@@ -43,7 +51,7 @@ export default function SessionStarted({ session }) {
 
     return (
         <div>
-            {!joining && (
+            {!joining && role === 'host' && (
                 <div>
                     <h1>Session started: {participantURL}</h1>
                     <button 
@@ -56,10 +64,9 @@ export default function SessionStarted({ session }) {
                 </div>
             )}
             {sessionData && (
-                <div>
+                <div id="session-content">
                     <h1>{sessionData.title}</h1>
                     <MarkDown markdown={sessionData.text}/>
-                    {/* <h2>{sessionData.text}</h2> */}
                     <InfoBar message={participantURL}/>
                     <AnswerButtonList 
                         sessionId={session}
@@ -73,13 +80,9 @@ export default function SessionStarted({ session }) {
                     {role === 'host' && <AdvanceButton sessionId={session}/>}
                     {debug && <div className="formatted-session-data">
                         <h4>Current state</h4>
-                        <SyntaxHighlighter language="json" style={docco}>
-                            {JSON.stringify(sessionData, null, 2)} 
-                        </SyntaxHighlighter>
+                        <Json object={sessionData}/>
                         <h4>Latest event</h4>
-                        <SyntaxHighlighter language="json" style={docco}>
-                            {JSON.stringify(latestEvent, null, 2)} 
-                        </SyntaxHighlighter>
+                        <Json object={latestEvent}/>
                     </div>}
                 </div>  
             )}

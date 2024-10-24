@@ -78,6 +78,10 @@ div.space-above {
   z-index: 1000;    /* Ensure it's above other content */
 }
 
+#footer {
+  opacity: 0.3;
+}
+
 div.error-message {
   border: 2px solid var(--error-color);
   background-color: var(--error-background);
@@ -343,6 +347,14 @@ p.my-p {
   /* div.space-above {
     margin-top: 70px;
   } */
+}
+
+/* div.responsive-grid.avoiding-footnote {
+  margin-bottom: 60px;
+} */
+
+#session-content {
+  margin-bottom: 60px;
 }
 
 @media only screen and (max-width: 800px) {
